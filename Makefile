@@ -1,6 +1,5 @@
 CLIENT_CREDENTIALS_BASE64:=$(shell base64 -i client-config.yaml)
 SERVER_CREDENTIALS_BASE64:=$(shell base64 -i server-config.yaml)
-#SERVER_ADDRESS=https://ci-cd-utils-csmcukcjoa-uc.a.run.app
 SERVER_ADDRESS=http://localhost:8500
 
 cmd_run_get_google_oauth2_token:
