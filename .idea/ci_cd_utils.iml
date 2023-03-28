@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/src/ci-cd-cmg-utils/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/src/ci-cd-cmg-utils/build" />
+      <excludeFolder url="file://$MODULE_DIR$/src/ci-cd-cmg-utils/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/src/ci-cd-cmd-utils/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/src/ci-cd-cmd-utils/build" />
+      <excludeFolder url="file://$MODULE_DIR$/src/ci-cd-cmd-utils/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/src/ci_cd_utils_server/build" />
+      <excludeFolder url="file://$MODULE_DIR$/src/ci_cd_utils_server/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/src/ci_cd_utils_server/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/src/cli/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/src/cli/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/src/cli/build" />
+      <excludeFolder url="file://$MODULE_DIR$/src/ci_cd_utils_server_conduit/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/src/ci_cd_utils_server_conduit/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/src/ci_cd_utils_server_conduit/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>

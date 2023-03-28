@@ -1,0 +1,19 @@
+port: 8500
+mongodb: 'mongodb://Your MongoDB Server Address'
+signature_timeout: 60000 # The TTL of requests
+
+clients_credentials:
+  - # User 1
+    user: 'user1'
+    public_key: 'The public key that was generated using ci_cd_cmd_utils create-keys command'
+    salt: '' # A random string that must shared with server
+    timeDiff: 0
+
+credentials:
+  google-oauth:
+    - # Your Google Oauth2 Credentials (just if you need to use google-oauth2-token command)
+      name: 'default'
+      refresh_token: ''
+      authorization: "Bearer <Token>"
+      client_id: '124124123-aosodiasjdnfoaksfoijso.apps.googleusercontent.com'
+      client_secret: '324vda1-asdfoi2j3093f-faiaisdjfo'

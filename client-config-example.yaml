@@ -1,0 +1,7 @@
+server:
+  address: 'https://the-server-address.com'
+  credentials:
+    user: 'user1'
+    key: 'The private key that was generated using ci_cd_cmd_utils create-keys command'
+    salt: '' # A random string that must shared with server
+    timeDiff: 0

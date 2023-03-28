@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="CMD Util -&gt; Create Keys" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile">
+    <makefile filename="$PROJECT_DIR$/Makefile" target="cmd_run_create_keys" workingDirectory="" arguments="">
+      <envs />
+    </makefile>
+    <method v="2" />
+  </configuration>
+</component>
