@@ -1,12 +1,13 @@
 CLIENT_CREDENTIALS_BASE64:=$(shell base64 -i client-config.yaml)
 SERVER_CREDENTIALS_BASE64:=$(shell base64 -i server-config.yaml)
 SERVER_ADDRESS=http://localhost:8500
+# SERVER_ADDRESS=null # Uncomment this line to use your production server based on client-config.yaml
 
 cmd_run_get_google_oauth2_token:
 	dart run src/ci-cd-cmd-utils/bin/ci_cd_cmd_utils.dart google-oauth2-token -a $(SERVER_ADDRESS) --base64 $(CLIENT_CREDENTIALS_BASE64)
 
 cmd_run_get_version_build_number:
-	dart run src/ci-cd-cmd-utils/bin/ci_cd_cmd_utils.dart version-build-number -v 1.1.18 -a $(SERVER_ADDRESS) --base64 $(CLIENT_CREDENTIALS_BASE64)
+	dart run src/ci-cd-cmd-utils/bin/ci_cd_cmd_utils.dart version-build-number -v 1.1.20 -a $(SERVER_ADDRESS) --base64 $(CLIENT_CREDENTIALS_BASE64)
 
 cmd_run_get_version_list:
 	dart run src/ci-cd-cmd-utils/bin/ci_cd_cmd_utils.dart version-list -a $(SERVER_ADDRESS) --base64 $(CLIENT_CREDENTIALS_BASE64)
@@ -34,7 +35,7 @@ server_container_build:
 	cd src/ci_cd_utils_server/ && docker build -f Dockerfile -t ranierjardim/ci_cd_utils:local_build .
 
 server_container_build_multi_platform:
-	cd src/ci_cd_utils_server/ && docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 -f Dockerfile -t ranierjardim/ci_cd_utils:local_build .
+	cd src/ci_cd_utils_server/ && docker buildx build --push --platform=linux/amd64,linux/arm64,linux/arm/v7 -f Dockerfile -t ranierjardim/ci_cd_utils:$(VERSION) -t ranierjardim/ci_cd_utils:latest .
 
 server_container_kill:
 	docker kill ci_cd_utils

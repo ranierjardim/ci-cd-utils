@@ -238,7 +238,6 @@ Future<void> getVersionListHandler(HttpRequest request, HttpResponse response) a
   final appId = request.params['appId'];
   final versionListCollection = mongoDb.collection('version_list');
   final lista = await versionListCollection.find({
-    'type': 'build_number_reference',
     'app_id': appId,
   }).toList();
   await response.json({"content": lista});

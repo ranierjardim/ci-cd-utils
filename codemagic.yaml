@@ -31,7 +31,7 @@ workflows:
           echo "APP_VERSION: $APP_VERSION"
           docker buildx ls
           docker buildx create --use default
-          docker buildx build --push --platform=linux/amd64,linux/arm64,linux/arm/v7 -f Dockerfile -t ranierjardim/ci_cd_utils:$APP_VERSION .
+          docker buildx build --push --platform=linux/amd64,linux/arm64,linux/arm/v7 -f Dockerfile -t ranierjardim/ci_cd_utils:$APP_VERSION -t ranierjardim/ci_cd_utils:latest .
     publishing:
       email:
         recipients:

@@ -59,7 +59,7 @@ Future<void> parse(List<String> arguments) async {
     }
     final configDocument = loadYaml(utf8.decode(base64Decode(base64)));
     String serverAddress = configDocument['server']['address'];
-    if(command.options.contains('serverAddress')) {
+    if(command.options.contains('serverAddress') && command['serverAddress'] != 'null') {
       serverAddress = command['serverAddress'];
     }
     final key = EOSPrivateKey.fromString(configDocument['server']['credentials']['key']);
@@ -92,7 +92,6 @@ Future<void> parse(List<String> arguments) async {
       final colunas = [
         ['Tag', 'Build Number'],
       ];
-      print('resposta.data: ${resposta.data}');
       final List<dynamic> versoes = resposta.data["content"];
       for (final versao in versoes) {
         colunas.add([versao['tag'], versao['buildNumber'].toString()]);
