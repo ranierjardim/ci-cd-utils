@@ -33,6 +33,9 @@ server_container_stop:
 server_container_build:
 	cd src/ci_cd_utils_server/ && docker build -f Dockerfile -t ranierjardim/ci_cd_utils:local_build .
 
+server_container_build_multi_platform:
+	cd src/ci_cd_utils_server/ && docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 -f Dockerfile -t ranierjardim/ci_cd_utils:local_build .
+
 server_container_kill:
 	docker kill ci_cd_utils
 
