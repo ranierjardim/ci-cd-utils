@@ -24,18 +24,14 @@ workflows:
       - name: Authenticate with Docker Hub
         script: |
           docker login -u $DOCKER_HUB_USER -p $DOCKER_HUB_PASSWORD
-      - name: Build container
-        script: |
-          docker buildx ls
-          docker buildx create --use default
-          docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 -f Dockerfile -t ranierjardim/ci_cd_utils:local_build .
-      - name: Upload and release on Docker Hub
+      - name: Build container and push to Docker Hub
         script: |
           export APP_VERSION=$(echo $CM_TAG | sed "s/-release\|-docker//g")
           echo "CM_TAG: $CM_TAG"
           echo "APP_VERSION: $APP_VERSION"
-          docker tag ranierjardim/ci_cd_utils:local_build ranierjardim/ci_cd_utils:$APP_VERSION
-          docker push ranierjardim/ci_cd_utils:$APP_VERSION
+          docker buildx ls
+          docker buildx create --use default
+          docker buildx build --push --platform=linux/amd64,linux/arm64,linux/arm/v7 -f Dockerfile -t ranierjardim/ci_cd_utils:$APP_VERSION .
     publishing:
       email:
         recipients:
