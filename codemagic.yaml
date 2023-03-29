@@ -27,7 +27,7 @@ workflows:
       - name: Build container
         script: |
           docker buildx ls
-          docker buildx create --use desktop-linux
+          docker buildx create --use default
           docker buildx build --platform=linux/amd64,linux/arm64,linux/arm/v7 -f Dockerfile -t ranierjardim/ci_cd_utils:local_build .
       - name: Upload and release on Docker Hub
         script: |
