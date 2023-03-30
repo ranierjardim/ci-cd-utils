@@ -1,4 +1,4 @@
-class CiCdCmd < Formula
+class CiCdUtils < Formula
   desc "Some utils to manage CI/CD projects builds"
   homepage "https://github.com/ranierjardim/ci_cd_utils"
   url "https://github.com/ranierjardim/ci_cd_utils.git", :using => :git, :tag => "0.0.11-docker"
