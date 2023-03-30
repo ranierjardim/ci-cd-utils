@@ -14,5 +14,5 @@ brew install ranierjardim/ci-cd-utils/ci-cd-utils
 To unninstall:
 
 ```console
-brew remove ranierjardim/ci_cd_utils/ci-cd-utils
+brew remove ranierjardim/ci-cd-utils/ci-cd-utils
 ```
